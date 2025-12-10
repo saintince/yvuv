@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Функциональность - CallTrack</title>
+<link rel="stylesheet" href="css.css">
+</head>
+<body>
+<header>
+    <div class="container">
+        <nav>
+            <ul id="nav">
+                <li><a href="hhhh.html" title="Вернуться на главную страницу">Главная</a></li>
+                <li>
+                    <a href="news.html" title="Новости и обновления">Новости</a>
+                    <ul>
+                        <li><a href="news.html#latest">Последние новости</a></li>
+                        <li><a href="news.html#updates">Обновления системы</a></li>
+                        <li><a href="news.html#events">Мероприятия</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="features.html" title="Функциональность системы" class="active">Функциональность</a>
+                    <ul>
+                        <li><a href="#calls">Учёт звонков</a></li>
+                        <li><a href="#analytics">Аналитика</a></li>
+                        <li><a href="#integration">Интеграции</a></li>
+                        <li><a href="#reports">Отчёты</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="register.html" title="Регистрация и вход">Регистрация</a>
+                    <ul>
+                        <li><a href="register.html">Новый пользователь</a></li>
+                        <li><a href="#" onclick="showLogin()">Вход в систему</a></li>
+                        <li><a href="#">Техподдержка</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" title="Как с нами связаться">Контакты</a>
+                    <ul>
+                        <li><a href="#">Адрес офиса</a></li>
+                        <li><a href="#">Телефоны</a></li>
+                        <li><a href="#">Электронная почта</a></li>
+                        <li><a href="#">Часы работы</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="calculator.html" title="Калькулятор расчётов">Калькулятор</a>
+                    <ul>
+                        <li><a href="calculator.html#basic">Простой калькулятор</a></li>
+                        <li><a href="calculator.html#business">Бизнес-расчёты</a></li>
+                        <li><a href="calculator.html#roi">ROI калькулятор</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <div id="datetime"></div>
+    </div>
+  <!-- База данных сверху -->
+<div class="database-header">
+    <div class="container">
+        <div class="db-controls">
+            <button class="db-toggle" onclick="toggleDatabase()">
+                <span class="db-toggle-icon">📊</span>
+                <span class="db-toggle-text">Статистика системы</span>
+                <span class="db-toggle-arrow">▼</span>
+            </button>
+        </div>
+        
+        <div class="db-stats" id="dbStats">
+            <div class="db-stat">
+                <span class="db-icon">📞</span>
+                <span class="db-label">Звонков сегодня:</span>
+                <span class="db-value" id="callsToday">1,247</span>
+            </div>
+            <div class="db-stat">
+                <span class="db-icon">👥</span>
+                <span class="db-label">Активных клиентов:</span>
+                <span class="db-value" id="activeClients">589</span>
+            </div>
+            <div class="db-stat">
+                <span class="db-icon">📊</span>
+                <span class="db-label">Средняя длительность:</span>
+                <span class="db-value" id="avgDuration">3:45</span>
+            </div>
+            <div class="db-stat">
+                <span class="db-icon">🎯</span>
+                <span class="db-label">Конверсия:</span>
+                <span class="db-value" id="conversionRate">24.7%</span>
+            </div>
+            <div class="db-stat">
+                <span class="db-icon">💰</span>
+                <span class="db-label">Доход сегодня:</span>
+                <span class="db-value" id="todayRevenue">124,700 руб</span>
+            </div>
+            <div class="db-stat">
+                <span class="db-icon">⏱️</span>
+                <span class="db-label">Онлайн операторов:</span>
+                <span class="db-value" id="onlineOperators">12/15</span>
+            </div>
+        </div>
+    </div>
+</div>
+</header>
+<main class="container">
+<div class="features-header">
+<h1> Функциональность системы</h1>
+<p>Полный набор инструментов для эффективного учёта и анализа телефонных
+переговоров</p>
+</div>
+<nav class="features-nav">
+<button class="nav-btn active" data-tab="calls"> Учёт звонков</button>
+<button class="nav-btn" data-tab="analytics"> Аналитика</button>
+<button class="nav-btn" data-tab="integration"> Интеграции</button>
+<button class="nav-btn" data-tab="reports"> Отчёты</button>
+</nav>
+<div class="features-content">
+<div class="tab-content active" id="calls">
+<div class="feature-hero">
+<h2>Учёт всех типов звонков</h2>
+<p>Полный контроль над входящими, исходящими и пропущенными звонками</p>
+</div>
+<div class="features-grid">
+<div class="feature-card detailed">
+<div class="feature-icon"> </div>
+<h3>Входящие звонки</h3>
+<ul>
+<li>Автоматическое определение номера</li>
+<li>Сопоставление с клиентской базой</li>
+<li>Запись разговоров</li>
+<li>Распределение по менеджерам</li>
+</ul>
+</div>
+<div class="feature-card detailed">
+<div class="feature-icon"> </div>
+<h3>Исходящие звонки</h3>
+<ul>
+<li>Интеграция с CRM</li>
+<li>Автодозвон из системы</li>
+<li>Шаблоны сценариев</li>
+<li>Учёт времени разговора</li>
+</ul>
+</div>
+<div class="feature-card detailed">
+<div class="feature-icon"> </div>
+<h3>Пропущенные звонки</h3>
+<ul>
+<li>Автоуведомления</li>
+<li>Приоритизация обратных звонков</li>
+<li>Анализ причин пропуска</li>
+<li>Напоминания менеджерам</li>
+</ul>
+</div>
+</div>
+<div class="feature-demo">
+<h3>Как это работает</h3>
+<div class="demo-steps">
+<div class="step">
+<span class="step-number">1</span>
+<p>Звонок поступает в систему</p>
+</div>
+<div class="step">
+<span class="step-number">2</span>
+<p>Автоматическая запись и анализ</p>
+</div>
+<div class="step">
+<span class="step-number">3</span>
+<p>Сопоставление с клиентом</p>
+</div>
+<div class="step">
+<span class="step-number">4</span>
+<p>Сохранение в базу данных</p>
+</div>
+</div>
+</div>
+</div>
+<div class="tab-content" id="analytics">
+<div class="feature-hero">
+<h2>Глубокая аналитика</h2>
+<p>Мощные инструменты для анализа эффективности звонков</p>
+</div>
+<div class="features-grid">
+<div class="feature-card detailed">
+<div class="feature-icon"> </div>
+<h3>Статистика в реальном времени</h3>
+<ul>
+<li>Динамические дашборды</li>
+<li>KPI менеджеров</li>
+<li>Конверсия звонков</li>
+<li>Загрузка линий</li>
+</ul>
+</div>
+<div class="feature-card detailed">
+<div class="feature-icon"> </div>
+<h3>AI-анализ разговоров</h3>
+<ul>
+<li>Определение тональности</li>
+<li>Выявление ключевых фраз</li>
+<li>Оценка качества обслуживания</li>
+<li>Рекомендации по улучшению</li>
+</ul>
+</div>
+<div class="feature-card detailed">
+<div class="feature-icon"> </div>
+<h3>Исторические данные</h3>
+<ul>
+<li>Анализ трендов</li>
+<li>Сравнение периодов</li>
+<li>Сезонность активности</li>
+<li>Прогнозирование нагрузки</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="tab-content" id="integration">
+<div class="feature-hero">
+<h2>Интеграции с популярными системами</h2>
+<p>Беспрепятственное взаимодействие с вашим рабочим окружением</p>
+</div>
+<div class="integrations-grid">
+<div class="integration-card">
+<div class="integration-logo"> </div>
+<h3>CRM системы</h3>
+<div class="integration-partners">
+<span class="partner">Bitrix24</span>
+<span class="partner">AmoCRM</span>
+<span class="partner">RetailCRM</span>
+<span class="partner">Microsoft Dynamics</span>
+</div>
+</div>
+<div class="integration-card">
+<div class="integration-logo"> </div>
+<h3>Мессенджеры</h3>
+<div class="integration-partners">
+<span class="partner">WhatsApp Business</span>
+<span class="partner">Telegram</span>
+<span class="partner">Viber</span>
+<span class="partner">Facebook Messenger</span>
+</div>
+</div>
+<div class="integration-card">
+<div class="integration-logo"> </div>
+<h3>Облачные сервисы</h3>
+<div class="integration-partners">
+<span class="partner">Google Workspace</span>
+<span class="partner">Microsoft 365</span>
+<span class="partner">Yandex 360</span>
+<span class="partner">Dropbox</span>
+</div>
+</div>
+<div class="integration-card">
+<div class="integration-logo"> </div>
+<h3>API для разработчиков</h3>
+<div class="integration-partners">
+<span class="partner">REST API</span>
+<span class="partner">Webhooks</span>
+<span class="partner">SDK</span>
+<span class="partner">Документация</span>
+</div>
+</div>
+</div>
+</div>
+<div class="tab-content" id="reports">
+<div class="feature-hero">
+<h2>Детальные отчёты</h2>
+<p>Готовые и настраиваемые отчёты для любого уровня управления</p>
+</div>
+<div class="reports-grid">
+<div class="report-card">
+<h3> Ежедневный отчёт менеджера</h3>
+<div class="report-features">
+<span>Количество звонков</span>
+<span>Время в разговорах</span>
+<span>Конверсия</span>
+<span>Пропущенные звонки</span>
+</div>
+</div>
+<div class="report-card">
+<h3> Недельная аналитика отдела</h3>
+<div class="report-features">
+<span>Сравнение менеджеров</span>
+<span>Динамика показателей</span>
+<span>Загрузка линий</span>
+<span>Эффективность работы</span>
+</div>
+</div>
+<div class="report-card">
+<h3> Месячный отчёт директора</h3>
+<div class="report-features">
+<span>Финансовые показатели</span>
+<span>ROI системы</span>
+<span>Тренды и прогнозы</span>
+<span>Рекомендации по развитию</span>
+</div>
+</div>
+</div>
+<div class="export-options">
+<h3>Экспорт данных</h3>
+<div class="export-formats">
+<div class="format-option">
+<span class="format-icon"> </span>
+<span>PDF</span>
+</div>
+<div class="format-option">
+<span class="format-icon"> </span>
+<span>Excel</span>
+</div>
+<div class="format-option">
+<span class="format-icon"> </span>
+<span>CSV</span>
+</div>
+<div class="format-option">
+<span class="format-icon"> </span>
+<span>Dashboard</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="features-cta">
+<h2>Готовы оптимизировать учёт звонков?</h2>
+<p>Начните использовать все возможности системы уже сегодня</p>
+<div class="cta-buttons">
+<a href="register.html" class="btn btn-primary">Начать бесплатно</a>
+<a href="index.html" class="btn btn-secondary">Демо-версия</a>
+</div>
+</div>
+</main>
+<footer>
+<div class="container">
+<p>Контакты: +7 (999) 123-45-67 | info@calltrack.ru</p>
+</div>
+</footer>
+<script src="js.js"></script>
+</body>
+</html>
